@@ -1,0 +1,42 @@
+﻿@model SparesShop.Models.ViewModels.HomeViewModel
+@{
+    string strTitle = "Homepage";
+    ViewBag.Title = strTitle;
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+
+
+</head>
+<body>
+    <header></header>
+
+
+
+    @if (ViewBag.IsSearchResult)
+    {
+        if (Model.Products.Any())
+        {
+            <h1>Search results</h1>
+        }
+        else
+        {
+            <h1>Nothing found</h1> }
+    }
+    else
+    {
+        <h1>Best</h1>} @*частичное представление*@
+        <div class="row mt-5 mb-2">
+            @{ foreach (Product product in Model.Products)
+                {@Html.Partial("ProductsPage", product)} }
+        </div>
+
+    </body>
+
+    <paging page-no="@ViewBag.CurrentPage"
+            page-size="@ViewBag.PageSize"
+            total-records="@ViewBag.PageCount"
+            show-total-records="false"
+            show-total-pages="false">
+    </paging>

@@ -1,0 +1,11 @@
+﻿//{
+//  "ConnectionStrings": {
+//    "DefaultConnection": "Data Source=DESKTOP-QS15FVF; Initial Catalog=SparesShop; User Id= sa; Password = sa;"
+//  }
+//}
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=SQL5063.site4now.net;Initial Catalog=DB_A7063B_SparesShop;User Id=DB_A7063B_SparesShop_admin;Password=aLv345543"
+  }
+}

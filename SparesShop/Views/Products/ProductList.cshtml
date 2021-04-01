@@ -1,0 +1,34 @@
+﻿@model SparesShop.Models.ViewModels.ProductListViewModel
+
+@{
+    string strTitle = "Catalog";
+    ViewBag.Title = strTitle;
+}
+
+<div class="btn-group">
+    <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Brand
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/Product/ProductList/KYB">KYB</a>
+        <a class="dropdown-item" href="/Product/ProductList/EXEDY">EXEDY</a>
+        <a class="dropdown-item" href="/Product/ProductList/PATRON">PATRON</a>
+        <a class="dropdown-item" href="/Product/ProductList/WP">WP</a>
+
+    </div>
+</div>
+
+<div class="row mt-5 mb-2">
+    @{ foreach (Product Product in Model.Products)
+        {@Html.Partial("ProductsPage", Product)} }
+
+</div>
+<paging page-no="@ViewBag.CurrentPage"
+        page-size="@ViewBag.PageSize"
+        total-records="@ViewBag.PageCount"
+        show-total-records="false"
+        show-total-pages="false">
+</paging>
+
+
+

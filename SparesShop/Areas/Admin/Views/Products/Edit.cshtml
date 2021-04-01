@@ -1,0 +1,54 @@
+﻿@model Product
+@{
+    string strTitle = "Edit ";
+    ViewBag.Title = strTitle;
+}
+
+
+
+<div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Edit</h4>
+    <form asp-area="Admin" asp-controller="Products" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="ProductId" value="@Model.Id" />
+        <input type="hidden" name="TitleImagePath" value="@Model.TitleImagePath" />
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" asp-for="Brand" placeholder="CategoryID">
+                <span asp-validation-for="Brand"></span>
+            </div>
+            
+        </div>
+        <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" asp-for="CategoryId" placeholder="200">
+                <span asp-validation-for="CategoryId"></span>
+            </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" asp-for="ArticleNumber" placeholder="200">
+            <span asp-validation-for="ArticleNumber"></span>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" asp-for="Price" placeholder="200">
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="titleImageFile" id="titleImageFile" />
+            <label class="custom-file-label" for="titleImageFile">File</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" asp-for="IsFav">
+            <label class="custom-control-label" asp-for="IsFav">Fav</label>
+        </div>
+
+        <hr class="mb-4">
+        <input type="submit" class="btn btn-info" name="" value="Save">
+        <a class="btn btn-outline-info" href="/Admin/Products/Index" role="button">Cancel</a>
+
+    </form>
+</div>
+
+

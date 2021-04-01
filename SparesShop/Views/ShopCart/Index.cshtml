@@ -1,0 +1,27 @@
+﻿@model SparesShop.Models.ViewModels.ShopCartViewModel
+@{
+    string strTitle = "ShopCart";
+    ViewBag.Title = strTitle;
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+<title>@strTitle</title>
+<div class="container">
+    @foreach (var item in Model.ShopCart.ShopCartItems)
+    {
+    <div class=" alert alert-danger" mt-3">
+        <b>Product:</b>@item.Product.Name<br />
+        <b>Product:</b>@item.Product.Brand<br />
+        <b>Product:</b>@item.Product.ArticleNumber<br />
+        <b>Price: </b>@item.Product.Price.ToString()
+    </div>}
+    <hr />
+    @Html.ActionLink("Go to checkout", "Checkout", "Orders", new { orderList = Model.ShopCart.ShopCartItems.Select(x => x.Product.Id) },
+                        Model.ShopCart.ShopCartItems.Any() ? new { @class = "btn btn-outline-info" } : new { @class = "btn btn-secondary disabled" })
+
+    <p></p>
+    @Html.ActionLink("Continue shopping", "Index", "Home", new { },
+                        Model.ShopCart.ShopCartItems.Any() ? new { @class = "btn btn-outline-info" } : new { @class = "btn btn-secondary enabled" })
+</div>

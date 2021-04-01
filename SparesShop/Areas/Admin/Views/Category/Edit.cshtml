@@ -1,0 +1,27 @@
+﻿@model Category
+@{
+    string strTitle = "Edit ";
+    ViewBag.Title = strTitle;
+}
+
+
+
+<div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Edit</h4>
+    <form asp-area="Admin" asp-controller="Category" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" asp-for="Name" placeholder="Name of the category">
+                <span asp-validation-for="Name"></span>
+            </div>
+           
+        </div>
+        <hr class="mb-4">
+        <input type="submit" class="btn btn-info" name="" value="Save">
+        <a class="btn btn-outline-info" href="/Admin/Category/Index" role="button">Cancel</a>
+
+    </form>
+</div>
+
+

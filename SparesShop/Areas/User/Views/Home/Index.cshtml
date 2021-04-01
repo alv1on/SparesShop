@@ -1,0 +1,18 @@
+﻿
+@model User
+@{
+    string strTitle = "User panel";
+    ViewBag.Title = strTitle;
+}
+<meta charset="UTF-8">
+
+
+<p>Hi,@User.Identity.Name</p>
+<p>Ur role is a @User.FindFirst(x => x.Type == System.Security.Claims.ClaimsIdentity.DefaultRoleClaimType).Value</p>
+
+<div class="box-button" id="login">
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+        <p><input type="submit" value="Log out" class="btn btn-info"></p>
+    </form>
+</div>
+

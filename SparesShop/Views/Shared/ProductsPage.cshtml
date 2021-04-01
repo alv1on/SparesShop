@@ -1,0 +1,31 @@
+﻿@model Product
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+</head>
+<body>
+    <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+            @if (string.IsNullOrEmpty(Model.TitleImagePath))
+            {
+                <img src="https://yeella.com/files/uploads/error_404.png" class="card-img-top" alt="...">
+            }
+            else
+            {
+                <img src="/images/@Model.TitleImagePath" class="card-img-top" alt="...">
+            }
+        <div class="card-body">
+            <p class="card-title">@Model.Brand</p>
+            <p class="card-title">@Model.ArticleNumber</p>
+            <p class="card-text">@Model.Name</p>
+            <p class="card-text">@Model.Price.ToString()</p>
+            @Html.ActionLink("Buy", "addToCart", "ShopCart", new { id = Model.Id }, new { @class = "btn btn-outline-info" })
+        </div>
+        </div>
+    </div>
+</body>
+</html>

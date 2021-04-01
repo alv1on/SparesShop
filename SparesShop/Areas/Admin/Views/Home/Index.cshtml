@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Product>
+@{
+    string strTitle = "Admin panel";
+    ViewBag.Title = strTitle;
+}
+<meta charset="UTF-8">
+
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        <table class="table table-striped">
+            <td>
+                <div class="div-box">
+
+                    <a class="nav-link" asp-area="Admin" asp-controller="Orders" asp-action="Index" method="post">
+
+                        <i class="fas fa-luggage-cart">Orders</i>
+                    </a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="Products" asp-action="Index" method="post">
+
+                        <i class="fab fa-product-hunt">Products</i>
+                    </a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index" method="post">
+
+                        <i class="fa fa-cogs" aria-hidden="true">Category</i>
+
+                    </a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="Users" asp-action="Index" method="post">
+
+                        <i class="fas fa-users">Users</i>
+
+                    </a>
+                </div>
+            </td>
+        </table>
+    </div>
+
+
+</div>
+
+
+<div class="box-button" id="login">
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+        <p><input type="submit" value="Log out" class="btn btn-info"></p>
+    </form>
+</div>
+

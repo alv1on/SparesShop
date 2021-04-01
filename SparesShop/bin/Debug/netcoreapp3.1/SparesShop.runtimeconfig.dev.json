@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Alvion\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Alvion\\.nuget\\packages"
+    ]
+  }
+}

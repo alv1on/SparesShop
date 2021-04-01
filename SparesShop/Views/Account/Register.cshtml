@@ -1,0 +1,34 @@
+﻿@model SparesShop.Models.ViewModels.RegisterViewModel
+@{
+    string strTitle = "Sigin";
+    ViewBag.Title = strTitle;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+
+    <form div class="mx-auto" style="width: 200px;" asp-area="" asp-controller="Account" asp-action="Register" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+        <h1>Register</h1>
+       <div class="mb-3">
+        <input type="text" asp-for="Email" placeholder="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+        </div>
+        <div class="mb-3">
+           <input type="password" asp-for="Password"  placeholder="Password" class="form-control"/>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="mb-3">
+           <input type="password" asp-for="PasswordConfirm" placeholder="ConfirmPassword"  class="form-control"/>
+            <span asp-validation-for="PasswordConfirm"></span>
+        </div>
+        <div class="ml-5">
+            <input type="submit" name="" value="Register" class="btn btn-info">
+        </div>
+    </form>
+
+</body>
+</html>
